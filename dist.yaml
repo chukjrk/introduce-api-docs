@@ -7,38 +7,40 @@ info:
     email: cjkemdirim@theopportunityexchange.com
     url: 'https://www.theopportunityexchange.com/'
 servers:
-- url: /
+  - url: /
 paths:
   /addcommunityprofiles/:
     get:
-      description: API endpoint that allows you to add Community Profiles to be viewed
-        or edited
+      description: >-
+        API endpoint that allows you to add Community Profiles to be viewed or
+        edited
       operationId: listCommunityProfiles
       parameters: []
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/inline_response_200'
-  /addcommunityprofiles/{id}/:
+  '/addcommunityprofiles/{id}/':
     get:
-      description: API endpoint that allows you to add Community Profiles to be viewed
-        or edited
+      description: >-
+        API endpoint that allows you to add Community Profiles to be viewed or
+        edited
       operationId: retrieveCommunityProfile
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this community profile.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this community profile.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
@@ -49,518 +51,526 @@ paths:
       operationId: listCommunityProfiles
       parameters: []
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/inline_response_200_2'
-  /publicprofiles/{organization_slugname}:
+  '/publicprofiles/{organization_slugname}':
     get:
-      description: API endpoint that allows Community Profiles that are public to
-        be viewed and excludes guest_editors
+      description: >-
+        API endpoint that allows Community Profiles that are public to be viewed
+        and excludes guest_editors
       operationId: RetrieveCommunityProfile
       parameters:
-      - name: organization_slugname
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: organization_slugname
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_3'
-  /choice/update/{id}:
+  '/choice/update/{id}':
     get:
       operationId: RetrieveChoice
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this choice.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this choice.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_4'
-  /choice/delete/{id}:
+  '/choice/delete/{id}':
     get:
       operationId: RetrieveChoice
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this choice.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this choice.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_4'
-  /communityprofiles/{id}:
+  '/communityprofiles/{id}':
     get:
       operationId: RetrieveCommunityProfile
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this community profile.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this community profile.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_3'
-  /communityprofilebyslug/{url_slug}:
+  '/communityprofilebyslug/{url_slug}':
     get:
       operationId: RetrieveCommunityProfile
       parameters:
-      - name: url_slug
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: url_slug
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_3'
-  /communityprofiles/update/{id}:
+  '/communityprofiles/update/{id}':
     get:
       description: API endpoint that allows users to edit a CommunityProfile.
       operationId: RetrieveCommunityProfile
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this community profile.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this community profile.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_1'
-  /communityprofiles/delete/{id}:
+  '/communityprofiles/delete/{id}':
     get:
       description: API endpoint that allows users to edit a CommunityProfile.
       operationId: RetrieveCommunityProfile
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this community profile.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this community profile.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_1'
-  /surveyresponses/{id}:
+  '/surveyresponses/{id}':
     get:
-      description: This API endpoint lists all of the survey responses for a specific
+      description: >-
+        This API endpoint lists all of the survey responses for a specific
         survey
       operationId: RetrieveSurveyResponses
       parameters:
-      - name: id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_5'
   /surveys/:
     get:
-      description: API endpoint that returns a list of surveys that belong to a PaidOrganization
+      description: >-
+        API endpoint that returns a list of surveys that belong to a
+        PaidOrganization
       operationId: listSurveys
       parameters: []
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/addcommunityprofiles_surveys'
-  /survey/{id}:
+  '/survey/{id}':
     get:
       operationId: RetrieveSurvey
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this survey.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this survey.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_6'
-  /survey/public/{url_slug}:
+  '/survey/public/{url_slug}':
     get:
       operationId: RetrieveSurvey
       parameters:
-      - name: url_slug
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: url_slug
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_7'
   /associatedtracts/:
     get:
-      description: API endpoint that allows census tracts affiliated with the user's
-        paid org account to be viewed
+      description: >-
+        API endpoint that allows census tracts affiliated with the user's paid
+        org account to be viewed
       operationId: listCensusTracts
       parameters: []
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/addcommunityprofiles_tracts_included'
-  /tracts/profile/{profile_pk}:
+  '/tracts/profile/{profile_pk}':
     get:
-      description: API endpoint that allows census tracts affiliated with a specific
+      description: >-
+        API endpoint that allows census tracts affiliated with a specific
         profile
       operationId: RetrieveCensusTract
       parameters:
-      - name: profile_pk
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: profile_pk
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/addcommunityprofiles_tracts_included'
   /communityattributes/:
     get:
-      description: API endpoint that returns a list of CommunityAttribute(s) that
-        belong to a PaidOrganization
+      description: >-
+        API endpoint that returns a list of CommunityAttribute(s) that belong to
+        a PaidOrganization
       operationId: listCommunityAttributes
       parameters: []
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/addcommunityprofiles_community_attributes'
-  /headerstat/update/{id}:
+                  $ref: >-
+                    #/components/schemas/addcommunityprofiles_community_attributes
+  '/headerstat/update/{id}':
     get:
       operationId: RetrieveHeaderStat
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this header stat.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this header stat.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/addcommunityprofiles_header_stats'
-  /headerstat/delete/{id}:
+  '/headerstat/delete/{id}':
     get:
       operationId: RetrieveHeaderStat
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this header stat.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this header stat.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/addcommunityprofiles_header_stats'
-  /otherresource/update/{id}:
+  '/otherresource/update/{id}':
     get:
       operationId: RetrieveOtherResource
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this other resource.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this other resource.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/addcommunityprofiles_other_resources'
-  /otherresource/delete/{id}:
+  '/otherresource/delete/{id}':
     get:
       operationId: RetrieveOtherResource
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this other resource.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this other resource.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/addcommunityprofiles_other_resources'
-  /simpletext/{id}:
+  '/simpletext/{id}':
     get:
       operationId: RetrieveSimpleText
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this simple text.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this simple text.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/addcommunityprofiles_simple_text'
-  /communityattribute/{id}:
+  '/communityattribute/{id}':
     get:
       operationId: RetrieveCommunityAttribute
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this community attribute.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this community attribute.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/addcommunityprofiles_community_attributes'
-  /landmark/update/{id}:
+  '/landmark/update/{id}':
     get:
       operationId: RetrieveLandmark
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this landmark.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this landmark.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/addcommunityprofiles_landmarks'
-  /landmark/delete/{id}:
+  '/landmark/delete/{id}':
     get:
       operationId: RetrieveLandmark
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this landmark.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this landmark.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/addcommunityprofiles_landmarks'
-  /galleryimage/update/{id}:
+  '/galleryimage/update/{id}':
     get:
       operationId: RetrieveGalleryImage
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this gallery image.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this gallery image.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/addcommunityprofiles_gallery_images'
-  /galleryimage/delete/{id}:
+  '/galleryimage/delete/{id}':
     get:
       operationId: RetrieveGalleryImage
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this gallery image.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this gallery image.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/addcommunityprofiles_gallery_images'
-  /project/update/{id}:
+  '/project/update/{id}':
     get:
       operationId: RetrieveProject
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this project.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this project.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/addcommunityprofiles_projects'
-  /project/delete/{id}:
+  '/project/delete/{id}':
     get:
       operationId: RetrieveProject
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this project.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this project.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/addcommunityprofiles_projects'
-  /profilechart/update/{id}:
+  '/profilechart/update/{id}':
     get:
       operationId: RetrieveProfileChart
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this profile chart.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this profile chart.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/addcommunityprofiles_charts'
-  /profilechart/delete/{id}:
+  '/profilechart/delete/{id}':
     get:
       operationId: RetrieveProfileChart
       parameters:
-      - name: id
-        in: path
-        description: A unique integer value identifying this profile chart.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          description: A unique integer value identifying this profile chart.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/addcommunityprofiles_charts'
-  /survey/duplicate/{id}:
+  '/survey/duplicate/{id}':
     post:
       operationId: CreateSurveyInternal
       parameters:
-      - name: id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: id
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
@@ -573,22 +583,22 @@ paths:
             schema:
               $ref: '#/components/schemas/body_2'
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_6'
-  /survey/{url_slug}/submit:
+  '/survey/{url_slug}/submit':
     post:
       operationId: CreateSurveyResponses
       parameters:
-      - name: url_slug
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
+        - name: url_slug
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
@@ -601,7 +611,7 @@ paths:
             schema:
               $ref: '#/components/schemas/body_5'
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
@@ -622,7 +632,7 @@ paths:
             schema:
               $ref: '#/components/schemas/body_8'
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
@@ -631,9 +641,9 @@ components:
   schemas:
     addcommunityprofiles_header_stats:
       required:
-      - community_profile
-      - stat_data
-      - stat_name
+        - community_profile
+        - stat_data
+        - stat_name
       properties:
         id:
           type: integer
@@ -648,8 +658,8 @@ components:
           type: integer
     addcommunityprofiles_landmarks:
       required:
-      - community_profile
-      - container
+        - community_profile
+        - container
       properties:
         id:
           type: integer
@@ -675,8 +685,8 @@ components:
           type: integer
     addcommunityprofiles_gallery_images:
       required:
-      - community_profile
-      - container
+        - community_profile
+        - container
       properties:
         id:
           type: integer
@@ -693,10 +703,10 @@ components:
           type: integer
     addcommunityprofiles_projects:
       required:
-      - community_profile
-      - container
-      - project_description
-      - project_name
+        - community_profile
+        - container
+        - project_description
+        - project_name
       properties:
         id:
           type: integer
@@ -718,9 +728,9 @@ components:
           type: integer
     addcommunityprofiles_charts:
       required:
-      - chart_type
-      - community_profile
-      - container
+        - chart_type
+        - community_profile
+        - container
       properties:
         id:
           type: integer
@@ -745,10 +755,10 @@ components:
           type: integer
     addcommunityprofiles_other_resources:
       required:
-      - community_profile
-      - container
-      - resource_name
-      - resource_type
+        - community_profile
+        - container
+        - resource_name
+        - resource_type
       properties:
         id:
           type: integer
@@ -761,11 +771,7 @@ components:
           type: string
         resource_url:
           maxLength: 200
-          pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\\
-            d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\\
-            .]+\\]|([a-z¡-\uffff0-9](?:[a-z¡-\uffff0-9-]{0,61}[a-z¡-\uffff0-9])?(?:\\\
-            .(?!-)[a-z¡-\uffff0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uffff-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\\
-            .?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
+          pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\.]+\\]|([a-z¡-\uFFFF0-9](?:[a-z¡-\uFFFF0-9-]{0,61}[a-z¡-\uFFFF0-9])?(?:\\.(?!-)[a-z¡-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
           type: string
           format: uri
           nullable: true
@@ -783,7 +789,7 @@ components:
           type: integer
     addcommunityprofiles_community_attributes:
       required:
-      - attribute
+        - attribute
       properties:
         id:
           type: integer
@@ -803,8 +809,8 @@ components:
             type: integer
     addcommunityprofiles_simple_text:
       required:
-      - community_profile
-      - container
+        - community_profile
+        - container
       properties:
         id:
           type: integer
@@ -820,9 +826,9 @@ components:
           type: integer
     addcommunityprofiles_containers:
       required:
-      - section
-      - title
-      - type
+        - section
+        - title
+        - type
       properties:
         id:
           type: integer
@@ -868,14 +874,14 @@ components:
         type:
           type: string
           enum:
-          - headerstat
-          - landmark
-          - galleryimage
-          - currentprojects
-          - profilechart
-          - otherresource
-          - communityattribute
-          - simpletext
+            - headerstat
+            - landmark
+            - galleryimage
+            - currentprojects
+            - profilechart
+            - otherresource
+            - communityattribute
+            - simpletext
         section:
           type: integer
     addcommunityprofiles_sections:
@@ -892,8 +898,8 @@ components:
           type: string
           readOnly: true
           enum:
-          - main
-          - sidebar
+            - main
+            - sidebar
         container_order:
           type: array
           nullable: true
@@ -904,13 +910,13 @@ components:
           readOnly: true
     addcommunityprofiles_tracts_included:
       required:
-      - county_id
-      - county_name
-      - paid_org_affiliation
-      - state_id
-      - state_name
-      - tract_id
-      - tract_name
+        - county_id
+        - county_name
+        - paid_org_affiliation
+        - state_id
+        - state_name
+        - tract_id
+        - tract_name
       properties:
         id:
           type: integer
@@ -939,9 +945,9 @@ components:
           type: integer
     addcommunityprofiles_conditions:
       required:
-      - logic_operator
-      - logic_requirement
-      - question_joiner
+        - logic_operator
+        - logic_requirement
+        - question_joiner
       properties:
         id:
           type: integer
@@ -957,8 +963,8 @@ components:
           type: string
     addcommunityprofiles_skips:
       required:
-      - jump_to
-      - question
+        - jump_to
+        - question
       properties:
         id:
           type: integer
@@ -976,7 +982,7 @@ components:
           type: integer
     addcommunityprofiles_questions:
       required:
-      - created_by
+        - created_by
       properties:
         id:
           type: integer
@@ -1021,7 +1027,7 @@ components:
           nullable: true
     addcommunityprofiles_surveys:
       required:
-      - community_profile
+        - community_profile
       properties:
         id:
           type: integer
@@ -1061,7 +1067,7 @@ components:
           type: integer
     addcommunityprofiles_paid_organization:
       required:
-      - associated_users
+        - associated_users
       type: object
       properties:
         id:
@@ -1072,7 +1078,7 @@ components:
           type: string
         organization_slugname:
           maxLength: 200
-          pattern: ^[-a-zA-Z0-9_]+$
+          pattern: '^[-a-zA-Z0-9_]+$'
           type: string
         organization_thumbnail:
           type: string
@@ -1090,79 +1096,71 @@ components:
         organization_geography_state:
           type: string
           enum:
-          - National
-          - Northeast
-          - Midwest
-          - South
-          - West
-          - AL
-          - AK
-          - AZ
-          - AR
-          - CA
-          - CO
-          - CT
-          - DE
-          - FL
-          - GA
-          - HI
-          - ID
-          - IL
-          - IN
-          - IA
-          - KS
-          - KY
-          - LA
-          - ME
-          - MD
-          - MA
-          - MI
-          - MN
-          - MS
-          - MO
-          - MT
-          - NE
-          - NV
-          - NH
-          - NJ
-          - NM
-          - NY
-          - NC
-          - ND
-          - OH
-          - OK
-          - OR
-          - PA
-          - RI
-          - SC
-          - SD
-          - TN
-          - TX
-          - UT
-          - VT
-          - VA
-          - WA
-          - WV
-          - WI
-          - WY
+            - National
+            - Northeast
+            - Midwest
+            - South
+            - West
+            - AL
+            - AK
+            - AZ
+            - AR
+            - CA
+            - CO
+            - CT
+            - DE
+            - FL
+            - GA
+            - HI
+            - ID
+            - IL
+            - IN
+            - IA
+            - KS
+            - KY
+            - LA
+            - ME
+            - MD
+            - MA
+            - MI
+            - MN
+            - MS
+            - MO
+            - MT
+            - NE
+            - NV
+            - NH
+            - NJ
+            - NM
+            - NY
+            - NC
+            - ND
+            - OH
+            - OK
+            - OR
+            - PA
+            - RI
+            - SC
+            - SD
+            - TN
+            - TX
+            - UT
+            - VT
+            - VA
+            - WA
+            - WV
+            - WI
+            - WY
         is_cp_public:
           type: boolean
         outline_geography_pathname:
           maxLength: 1500
-          pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\\
-            d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\\
-            .]+\\]|([a-z¡-\uffff0-9](?:[a-z¡-\uffff0-9-]{0,61}[a-z¡-\uffff0-9])?(?:\\\
-            .(?!-)[a-z¡-\uffff0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uffff-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\\
-            .?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
+          pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\.]+\\]|([a-z¡-\uFFFF0-9](?:[a-z¡-\uFFFF0-9-]{0,61}[a-z¡-\uFFFF0-9])?(?:\\.(?!-)[a-z¡-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
           type: string
           format: uri
         selection_geography_pathname:
           maxLength: 1500
-          pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\\
-            d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\\
-            .]+\\]|([a-z¡-\uffff0-9](?:[a-z¡-\uffff0-9-]{0,61}[a-z¡-\uffff0-9])?(?:\\\
-            .(?!-)[a-z¡-\uffff0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uffff-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\\
-            .?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
+          pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\.]+\\]|([a-z¡-\uFFFF0-9](?:[a-z¡-\uFFFF0-9-]{0,61}[a-z¡-\uFFFF0-9])?(?:\\.(?!-)[a-z¡-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
           type: string
           format: uri
         paid_org_id_connect:
@@ -1176,7 +1174,7 @@ components:
             type: integer
     inline_response_200:
       required:
-      - tracts_included
+        - tracts_included
       properties:
         id:
           type: integer
@@ -1237,7 +1235,7 @@ components:
             type: integer
     inline_response_200_1:
       required:
-      - tracts_included
+        - tracts_included
       properties:
         id:
           type: integer
@@ -1253,9 +1251,9 @@ components:
           readOnly: true
           items:
             required:
-            - community_profile
-            - stat_data
-            - stat_name
+              - community_profile
+              - stat_data
+              - stat_name
             properties:
               id:
                 type: integer
@@ -1281,9 +1279,9 @@ components:
                 readOnly: true
                 items:
                   required:
-                  - section
-                  - title
-                  - type
+                    - section
+                    - title
+                    - type
                   properties:
                     id:
                       type: integer
@@ -1293,8 +1291,8 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - community_profile
-                        - container
+                          - community_profile
+                          - container
                         properties:
                           id:
                             type: integer
@@ -1323,8 +1321,8 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - community_profile
-                        - container
+                          - community_profile
+                          - container
                         properties:
                           id:
                             type: integer
@@ -1344,10 +1342,10 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - community_profile
-                        - container
-                        - project_description
-                        - project_name
+                          - community_profile
+                          - container
+                          - project_description
+                          - project_name
                         properties:
                           id:
                             type: integer
@@ -1372,9 +1370,9 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - chart_type
-                        - community_profile
-                        - container
+                          - chart_type
+                          - community_profile
+                          - container
                         properties:
                           id:
                             type: integer
@@ -1402,10 +1400,10 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - community_profile
-                        - container
-                        - resource_name
-                        - resource_type
+                          - community_profile
+                          - container
+                          - resource_name
+                          - resource_type
                         properties:
                           id:
                             type: integer
@@ -1418,13 +1416,7 @@ components:
                             type: string
                           resource_url:
                             maxLength: 200
-                            pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\\
-                              s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(?:\\\
-                              .(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\\
-                              .]+\\]|([a-z¡-\uffff0-9](?:[a-z¡-\uffff0-9-]{0,61}[a-z¡\
-                              -\uffff0-9])?(?:\\.(?!-)[a-z¡-\uffff0-9-]{1,63}(?<!-))*\\\
-                              .(?!-)(?:[a-z¡-\uffff-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\\
-                              .?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
+                            pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\.]+\\]|([a-z¡-\uFFFF0-9](?:[a-z¡-\uFFFF0-9-]{0,61}[a-z¡-\uFFFF0-9])?(?:\\.(?!-)[a-z¡-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
                             type: string
                             format: uri
                             nullable: true
@@ -1445,7 +1437,7 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - attribute
+                          - attribute
                         properties:
                           id:
                             type: integer
@@ -1468,8 +1460,8 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - community_profile
-                        - container
+                          - community_profile
+                          - container
                         properties:
                           id:
                             type: integer
@@ -1489,22 +1481,22 @@ components:
                     type:
                       type: string
                       enum:
-                      - headerstat
-                      - landmark
-                      - galleryimage
-                      - currentprojects
-                      - profilechart
-                      - otherresource
-                      - communityattribute
-                      - simpletext
+                        - headerstat
+                        - landmark
+                        - galleryimage
+                        - currentprojects
+                        - profilechart
+                        - otherresource
+                        - communityattribute
+                        - simpletext
                     section:
                       type: integer
               location:
                 type: string
                 readOnly: true
                 enum:
-                - main
-                - sidebar
+                  - main
+                  - sidebar
               container_order:
                 type: array
                 nullable: true
@@ -1517,13 +1509,13 @@ components:
           type: array
           items:
             required:
-            - county_id
-            - county_name
-            - paid_org_affiliation
-            - state_id
-            - state_name
-            - tract_id
-            - tract_name
+              - county_id
+              - county_name
+              - paid_org_affiliation
+              - state_id
+              - state_name
+              - tract_id
+              - tract_name
             properties:
               id:
                 type: integer
@@ -1555,7 +1547,7 @@ components:
           readOnly: true
           items:
             required:
-            - community_profile
+              - community_profile
             properties:
               id:
                 type: integer
@@ -1571,7 +1563,7 @@ components:
                 readOnly: true
                 items:
                   required:
-                  - created_by
+                    - created_by
                   properties:
                     id:
                       type: integer
@@ -1609,8 +1601,8 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - jump_to
-                        - question
+                          - jump_to
+                          - question
                         properties:
                           id:
                             type: integer
@@ -1622,9 +1614,9 @@ components:
                             readOnly: true
                             items:
                               required:
-                              - logic_operator
-                              - logic_requirement
-                              - question_joiner
+                                - logic_operator
+                                - logic_requirement
+                                - question_joiner
                               properties:
                                 id:
                                   type: integer
@@ -1671,7 +1663,7 @@ components:
                 type: integer
         paid_organization:
           required:
-          - associated_users
+            - associated_users
           type: object
           properties:
             id:
@@ -1682,7 +1674,7 @@ components:
               type: string
             organization_slugname:
               maxLength: 200
-              pattern: ^[-a-zA-Z0-9_]+$
+              pattern: '^[-a-zA-Z0-9_]+$'
               type: string
             organization_thumbnail:
               type: string
@@ -1700,79 +1692,71 @@ components:
             organization_geography_state:
               type: string
               enum:
-              - National
-              - Northeast
-              - Midwest
-              - South
-              - West
-              - AL
-              - AK
-              - AZ
-              - AR
-              - CA
-              - CO
-              - CT
-              - DE
-              - FL
-              - GA
-              - HI
-              - ID
-              - IL
-              - IN
-              - IA
-              - KS
-              - KY
-              - LA
-              - ME
-              - MD
-              - MA
-              - MI
-              - MN
-              - MS
-              - MO
-              - MT
-              - NE
-              - NV
-              - NH
-              - NJ
-              - NM
-              - NY
-              - NC
-              - ND
-              - OH
-              - OK
-              - OR
-              - PA
-              - RI
-              - SC
-              - SD
-              - TN
-              - TX
-              - UT
-              - VT
-              - VA
-              - WA
-              - WV
-              - WI
-              - WY
+                - National
+                - Northeast
+                - Midwest
+                - South
+                - West
+                - AL
+                - AK
+                - AZ
+                - AR
+                - CA
+                - CO
+                - CT
+                - DE
+                - FL
+                - GA
+                - HI
+                - ID
+                - IL
+                - IN
+                - IA
+                - KS
+                - KY
+                - LA
+                - ME
+                - MD
+                - MA
+                - MI
+                - MN
+                - MS
+                - MO
+                - MT
+                - NE
+                - NV
+                - NH
+                - NJ
+                - NM
+                - NY
+                - NC
+                - ND
+                - OH
+                - OK
+                - OR
+                - PA
+                - RI
+                - SC
+                - SD
+                - TN
+                - TX
+                - UT
+                - VT
+                - VA
+                - WA
+                - WV
+                - WI
+                - WY
             is_cp_public:
               type: boolean
             outline_geography_pathname:
               maxLength: 1500
-              pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\\
-                d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\\
-                .]+\\]|([a-z¡-\uffff0-9](?:[a-z¡-\uffff0-9-]{0,61}[a-z¡-\uffff0-9])?(?:\\\
-                .(?!-)[a-z¡-\uffff0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uffff-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\\
-                .?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
+              pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\.]+\\]|([a-z¡-\uFFFF0-9](?:[a-z¡-\uFFFF0-9-]{0,61}[a-z¡-\uFFFF0-9])?(?:\\.(?!-)[a-z¡-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
               type: string
               format: uri
             selection_geography_pathname:
               maxLength: 1500
-              pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\\
-                d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\\
-                .]+\\]|([a-z¡-\uffff0-9](?:[a-z¡-\uffff0-9-]{0,61}[a-z¡-\uffff0-9])?(?:\\\
-                .(?!-)[a-z¡-\uffff0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uffff-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\\
-                .?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
+              pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\.]+\\]|([a-z¡-\uFFFF0-9](?:[a-z¡-\uFFFF0-9-]{0,61}[a-z¡-\uFFFF0-9])?(?:\\.(?!-)[a-z¡-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
               type: string
               format: uri
             paid_org_id_connect:
@@ -1814,7 +1798,7 @@ components:
             type: integer
     inline_response_200_2:
       required:
-      - tracts_included
+        - tracts_included
       properties:
         id:
           type: integer
@@ -1847,7 +1831,7 @@ components:
           readOnly: true
           items:
             required:
-            - community_profile
+              - community_profile
             properties:
               id:
                 type: integer
@@ -1863,7 +1847,7 @@ components:
                 readOnly: true
                 items:
                   required:
-                  - created_by
+                    - created_by
                   properties:
                     id:
                       type: integer
@@ -1901,8 +1885,8 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - jump_to
-                        - question
+                          - jump_to
+                          - question
                         properties:
                           id:
                             type: integer
@@ -1914,9 +1898,9 @@ components:
                             readOnly: true
                             items:
                               required:
-                              - logic_operator
-                              - logic_requirement
-                              - question_joiner
+                                - logic_operator
+                                - logic_requirement
+                                - question_joiner
                               properties:
                                 id:
                                   type: integer
@@ -1971,13 +1955,13 @@ components:
           readOnly: true
           items:
             required:
-            - county_id
-            - county_name
-            - paid_org_affiliation
-            - state_id
-            - state_name
-            - tract_id
-            - tract_name
+              - county_id
+              - county_name
+              - paid_org_affiliation
+              - state_id
+              - state_name
+              - tract_id
+              - tract_name
             properties:
               id:
                 type: integer
@@ -2012,9 +1996,9 @@ components:
           readOnly: true
           items:
             required:
-            - community_profile
-            - stat_data
-            - stat_name
+              - community_profile
+              - stat_data
+              - stat_name
             properties:
               id:
                 type: integer
@@ -2042,9 +2026,9 @@ components:
                 readOnly: true
                 items:
                   required:
-                  - section
-                  - title
-                  - type
+                    - section
+                    - title
+                    - type
                   properties:
                     id:
                       type: integer
@@ -2054,8 +2038,8 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - community_profile
-                        - container
+                          - community_profile
+                          - container
                         properties:
                           id:
                             type: integer
@@ -2084,8 +2068,8 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - community_profile
-                        - container
+                          - community_profile
+                          - container
                         properties:
                           id:
                             type: integer
@@ -2105,10 +2089,10 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - community_profile
-                        - container
-                        - project_description
-                        - project_name
+                          - community_profile
+                          - container
+                          - project_description
+                          - project_name
                         properties:
                           id:
                             type: integer
@@ -2133,9 +2117,9 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - chart_type
-                        - community_profile
-                        - container
+                          - chart_type
+                          - community_profile
+                          - container
                         properties:
                           id:
                             type: integer
@@ -2163,10 +2147,10 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - community_profile
-                        - container
-                        - resource_name
-                        - resource_type
+                          - community_profile
+                          - container
+                          - resource_name
+                          - resource_type
                         properties:
                           id:
                             type: integer
@@ -2179,13 +2163,7 @@ components:
                             type: string
                           resource_url:
                             maxLength: 200
-                            pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\\
-                              s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(?:\\\
-                              .(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\\
-                              .]+\\]|([a-z¡-\uffff0-9](?:[a-z¡-\uffff0-9-]{0,61}[a-z¡\
-                              -\uffff0-9])?(?:\\.(?!-)[a-z¡-\uffff0-9-]{1,63}(?<!-))*\\\
-                              .(?!-)(?:[a-z¡-\uffff-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\\
-                              .?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
+                            pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\.]+\\]|([a-z¡-\uFFFF0-9](?:[a-z¡-\uFFFF0-9-]{0,61}[a-z¡-\uFFFF0-9])?(?:\\.(?!-)[a-z¡-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
                             type: string
                             format: uri
                             nullable: true
@@ -2206,7 +2184,7 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - attribute
+                          - attribute
                         properties:
                           id:
                             type: integer
@@ -2229,8 +2207,8 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - community_profile
-                        - container
+                          - community_profile
+                          - container
                         properties:
                           id:
                             type: integer
@@ -2250,22 +2228,22 @@ components:
                     type:
                       type: string
                       enum:
-                      - headerstat
-                      - landmark
-                      - galleryimage
-                      - currentprojects
-                      - profilechart
-                      - otherresource
-                      - communityattribute
-                      - simpletext
+                        - headerstat
+                        - landmark
+                        - galleryimage
+                        - currentprojects
+                        - profilechart
+                        - otherresource
+                        - communityattribute
+                        - simpletext
                     section:
                       type: integer
               location:
                 type: string
                 readOnly: true
                 enum:
-                - main
-                - sidebar
+                  - main
+                  - sidebar
               container_order:
                 type: array
                 nullable: true
@@ -2279,8 +2257,8 @@ components:
           readOnly: true
           items:
             required:
-            - community_profile
-            - container
+              - community_profile
+              - container
             properties:
               id:
                 type: integer
@@ -2309,8 +2287,8 @@ components:
           readOnly: true
           items:
             required:
-            - community_profile
-            - container
+              - community_profile
+              - container
             properties:
               id:
                 type: integer
@@ -2330,10 +2308,10 @@ components:
           readOnly: true
           items:
             required:
-            - community_profile
-            - container
-            - project_description
-            - project_name
+              - community_profile
+              - container
+              - project_description
+              - project_name
             properties:
               id:
                 type: integer
@@ -2358,9 +2336,9 @@ components:
           readOnly: true
           items:
             required:
-            - chart_type
-            - community_profile
-            - container
+              - chart_type
+              - community_profile
+              - container
             properties:
               id:
                 type: integer
@@ -2388,10 +2366,10 @@ components:
           readOnly: true
           items:
             required:
-            - community_profile
-            - container
-            - resource_name
-            - resource_type
+              - community_profile
+              - container
+              - resource_name
+              - resource_type
             properties:
               id:
                 type: integer
@@ -2404,12 +2382,7 @@ components:
                 type: string
               resource_url:
                 maxLength: 200
-                pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\\
-                  d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\\
-                  [[0-9a-f:\\.]+\\]|([a-z¡-\uffff0-9](?:[a-z¡-\uffff0-9-]{0,61}[a-z¡\
-                  -\uffff0-9])?(?:\\.(?!-)[a-z¡-\uffff0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡\
-                  -\uffff-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\\
-                  d{2,5})?(?:[/?#][^\\s]*)?\\Z"
+                pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\.]+\\]|([a-z¡-\uFFFF0-9](?:[a-z¡-\uFFFF0-9-]{0,61}[a-z¡-\uFFFF0-9])?(?:\\.(?!-)[a-z¡-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
                 type: string
                 format: uri
                 nullable: true
@@ -2430,7 +2403,7 @@ components:
           readOnly: true
           items:
             required:
-            - attribute
+              - attribute
             properties:
               id:
                 type: integer
@@ -2450,7 +2423,7 @@ components:
                   type: integer
         paid_organization:
           required:
-          - associated_users
+            - associated_users
           type: object
           properties:
             id:
@@ -2461,7 +2434,7 @@ components:
               type: string
             organization_slugname:
               maxLength: 200
-              pattern: ^[-a-zA-Z0-9_]+$
+              pattern: '^[-a-zA-Z0-9_]+$'
               type: string
             organization_thumbnail:
               type: string
@@ -2479,79 +2452,71 @@ components:
             organization_geography_state:
               type: string
               enum:
-              - National
-              - Northeast
-              - Midwest
-              - South
-              - West
-              - AL
-              - AK
-              - AZ
-              - AR
-              - CA
-              - CO
-              - CT
-              - DE
-              - FL
-              - GA
-              - HI
-              - ID
-              - IL
-              - IN
-              - IA
-              - KS
-              - KY
-              - LA
-              - ME
-              - MD
-              - MA
-              - MI
-              - MN
-              - MS
-              - MO
-              - MT
-              - NE
-              - NV
-              - NH
-              - NJ
-              - NM
-              - NY
-              - NC
-              - ND
-              - OH
-              - OK
-              - OR
-              - PA
-              - RI
-              - SC
-              - SD
-              - TN
-              - TX
-              - UT
-              - VT
-              - VA
-              - WA
-              - WV
-              - WI
-              - WY
+                - National
+                - Northeast
+                - Midwest
+                - South
+                - West
+                - AL
+                - AK
+                - AZ
+                - AR
+                - CA
+                - CO
+                - CT
+                - DE
+                - FL
+                - GA
+                - HI
+                - ID
+                - IL
+                - IN
+                - IA
+                - KS
+                - KY
+                - LA
+                - ME
+                - MD
+                - MA
+                - MI
+                - MN
+                - MS
+                - MO
+                - MT
+                - NE
+                - NV
+                - NH
+                - NJ
+                - NM
+                - NY
+                - NC
+                - ND
+                - OH
+                - OK
+                - OR
+                - PA
+                - RI
+                - SC
+                - SD
+                - TN
+                - TX
+                - UT
+                - VT
+                - VA
+                - WA
+                - WV
+                - WI
+                - WY
             is_cp_public:
               type: boolean
             outline_geography_pathname:
               maxLength: 1500
-              pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\\
-                d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\\
-                .]+\\]|([a-z¡-\uffff0-9](?:[a-z¡-\uffff0-9-]{0,61}[a-z¡-\uffff0-9])?(?:\\\
-                .(?!-)[a-z¡-\uffff0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uffff-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\\
-                .?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
+              pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\.]+\\]|([a-z¡-\uFFFF0-9](?:[a-z¡-\uFFFF0-9-]{0,61}[a-z¡-\uFFFF0-9])?(?:\\.(?!-)[a-z¡-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
               type: string
               format: uri
             selection_geography_pathname:
               maxLength: 1500
-              pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\\
-                d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\\
-                .]+\\]|([a-z¡-\uffff0-9](?:[a-z¡-\uffff0-9-]{0,61}[a-z¡-\uffff0-9])?(?:\\\
-                .(?!-)[a-z¡-\uffff0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uffff-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\\
-                .?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
+              pattern: "^(?:[a-z0-9\\.\\-\\+]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}|\\[[0-9a-f:\\.]+\\]|([a-z¡-\uFFFF0-9](?:[a-z¡-\uFFFF0-9-]{0,61}[a-z¡-\uFFFF0-9])?(?:\\.(?!-)[a-z¡-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{2,5})?(?:[/?#][^\\s]*)?\\Z"
               type: string
               format: uri
             paid_org_id_connect:
@@ -2566,7 +2531,7 @@ components:
           readOnly: true
     inline_response_200_4:
       required:
-      - question
+        - question
       properties:
         id:
           type: integer
@@ -2595,8 +2560,8 @@ components:
           type: integer
     inline_response_200_5:
       required:
-      - responses
-      - survey_id
+        - responses
+        - survey_id
       properties:
         id:
           type: integer
@@ -2611,10 +2576,10 @@ components:
           type: integer
     inline_response_200_6:
       required:
-      - community_profile
-      - created_by
-      - external_title
-      - internal_title
+        - community_profile
+        - created_by
+        - external_title
+        - internal_title
       properties:
         id:
           type: integer
@@ -2624,7 +2589,7 @@ components:
           readOnly: true
           items:
             required:
-            - created_by
+              - created_by
             properties:
               id:
                 type: integer
@@ -2662,8 +2627,8 @@ components:
                 readOnly: true
                 items:
                   required:
-                  - jump_to
-                  - question
+                    - jump_to
+                    - question
                   properties:
                     id:
                       type: integer
@@ -2675,9 +2640,9 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - logic_operator
-                        - logic_requirement
-                        - question_joiner
+                          - logic_operator
+                          - logic_requirement
+                          - question_joiner
                         properties:
                           id:
                             type: integer
@@ -2732,7 +2697,7 @@ components:
           type: integer
     inline_response_200_7:
       required:
-      - community_profile
+        - community_profile
       properties:
         id:
           type: integer
@@ -2748,7 +2713,7 @@ components:
           readOnly: true
           items:
             required:
-            - created_by
+              - created_by
             properties:
               id:
                 type: integer
@@ -2786,8 +2751,8 @@ components:
                 readOnly: true
                 items:
                   required:
-                  - jump_to
-                  - question
+                    - jump_to
+                    - question
                   properties:
                     id:
                       type: integer
@@ -2799,9 +2764,9 @@ components:
                       readOnly: true
                       items:
                         required:
-                        - logic_operator
-                        - logic_requirement
-                        - question_joiner
+                          - logic_operator
+                          - logic_requirement
+                          - question_joiner
                         properties:
                           id:
                             type: integer
@@ -2848,10 +2813,10 @@ components:
           type: integer
     body:
       required:
-      - community_profile
-      - created_by
-      - external_title
-      - internal_title
+        - community_profile
+        - created_by
+        - external_title
+        - internal_title
       properties:
         is_public:
           type: boolean
@@ -2885,10 +2850,10 @@ components:
           type: integer
     body_1:
       required:
-      - community_profile
-      - created_by
-      - external_title
-      - internal_title
+        - community_profile
+        - created_by
+        - external_title
+        - internal_title
       properties:
         is_public:
           type: boolean
@@ -2922,10 +2887,10 @@ components:
           type: integer
     body_2:
       required:
-      - community_profile
-      - created_by
-      - external_title
-      - internal_title
+        - community_profile
+        - created_by
+        - external_title
+        - internal_title
       properties:
         is_public:
           type: boolean
@@ -2959,25 +2924,25 @@ components:
           type: integer
     body_3:
       required:
-      - responses
+        - responses
       properties:
         responses:
           type: object
     body_4:
       required:
-      - responses
+        - responses
       properties:
         responses:
           type: object
     body_5:
       required:
-      - responses
+        - responses
       properties:
         responses:
           type: object
     inline_response_200_8:
       required:
-      - responses
+        - responses
       properties:
         id:
           type: integer
