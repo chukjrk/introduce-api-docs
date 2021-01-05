@@ -6,6 +6,9 @@ info:
   contact:
     email: cjkemdirim@theopportunityexchange.com
     url: 'https://www.theopportunityexchange.com/'
+  x-logo:
+    url: >-
+      https://toeconnect-production.s3.us-east-2.amazonaws.com/static/images/LOGO-Final2x-p-1080.png
 servers:
   - url: /
 paths:
